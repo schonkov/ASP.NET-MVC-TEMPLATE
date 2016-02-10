@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcTemplate.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,8 @@ namespace MvcTemplate.Web.Controllers
     {
         public ActionResult Index()
         {
+            var dbContext = new ApplicationDbContext();
+            var users = dbContext.Users.Count();
             return View();
         }
 
